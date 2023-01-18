@@ -13,58 +13,8 @@ function getComputerChoice(min, max) {
     }
 }
 
-function playGame(btnType) {
-    let playerChoice = document.getElementById(btnType).textContent.toLowerCase()
-    let computerChoice = getComputerChoice(1, 3)
-
-    console.log("Your Choice:", playerChoice)
-    console.log("Computer Choice:", computerChoice)
-
-    if (playerChoice === "rock" && computerChoice === "paper") {
-        console.log("You lose! ")
-        computerPoints += 1
-    } else if (playerChoice === "paper" && computerChoice === "scissors") {
-        console.log("You lose!")
-        computerPoints += 1
-    } else if (playerChoice === "scissors" && computerChoice === "rock") {
-        console.log("You lose!")
-        computerPoints += 1
-    } else if (playerChoice === "rock" && computerChoice === "scissors") {
-        console.log("You win!")
-        playerPoints += 1
-    } else if (playerChoice === "paper" && computerChoice === "rock") {
-        console.log("You win!")
-        playerPoints += 1
-    } else if (playerChoice === "scissors" && computerChoice === "paper") {
-        console.log("You win!")
-        playerPoints += 1
-    } else if (playerChoice === computerChoice){
-        console.log("Draw!")
-    } else {
-        console.log("Please choose one of the three options!")
-    }
-
-    checkWinner()
-    displayScore()
-}
-
-function checkWinner(){
-    if (computerPoints === playerPoints){
-        console.log("Draw!")
-    } else if (computerPoints > playerPoints) {
-        console.log("You lost the match!!")
-    } else {
-        console.log("You won the match!!")
-    }
-}
-
-function displayScore() {
-    console.log("Computer Points:", computerPoints)
-    console.log("Your Points:", playerPoints)
-}
-
-
 function displayPlay(btnType) {
+    buttonClick += 1
     let playerChoice = document.getElementById(btnType).textContent.toLowerCase()
     let computerChoice = getComputerChoice(1, 3)
 
